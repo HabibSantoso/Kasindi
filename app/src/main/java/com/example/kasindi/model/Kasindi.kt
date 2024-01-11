@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "tblUser")
-data class user(
+data class User(
     @PrimaryKey(autoGenerate = true)
     val uid : Int = 0,
     val nama : String,
@@ -13,7 +13,7 @@ data class user(
 )
 
 @Entity(tableName = "tbltransaksi")
-data class transaksi(
+data class Transaksi(
     @PrimaryKey(autoGenerate = true)
     val tid : Int = 0,
     val keterangan : String,
