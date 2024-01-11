@@ -23,5 +23,5 @@ interface RepositoriKasindi {
 
     suspend fun deleteT(transaksi: Transaksi)
 
-    suspend fun update(transaksi: Transaksi)
+    suspend fun updateT(transaksi: Transaksi)
 }
