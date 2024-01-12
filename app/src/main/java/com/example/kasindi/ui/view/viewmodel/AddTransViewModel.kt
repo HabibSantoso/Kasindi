@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.example.kasindi.model.Transaksi
 import com.example.kasindi.repositori.RepositoriKasindi
 
-class AddTransScreen(private val repositoriKasindi: RepositoriKasindi) : ViewModel() {
+class AddTransViewModel(private val repositoriKasindi: RepositoriKasindi) : ViewModel() {
 
     var uiStateTransaksi by mutableStateOf(UiStateTransaksi())
         private set
@@ -15,6 +15,17 @@ class AddTransScreen(private val repositoriKasindi: RepositoriKasindi) : ViewMod
     private fun validasiInput(uiState: Detailtransaksi = uiStateTransaksi.detailtransaksi): Boolean {
         return with(uiState) {
             keterangan.isNotBlank() && tipe.isNotBlank() && nominal>0
+        }
+    }
+
+    fun updateUiState(detailtransaksi: Detailtransaksi){
+        uiStateTransaksi =
+            UiStateTransaksi(detailtransaksi = detailtransaksi, isEntryVAlid = validasiInput(detailtransaksi))
+    }
+
+    suspend fun saveTransaksi() {
+        if (validasiInput()) {
+            repositoriKasindi.insertT(uiStateTransaksi.detailtransaksi.toTrans())
         }
     }
 }
