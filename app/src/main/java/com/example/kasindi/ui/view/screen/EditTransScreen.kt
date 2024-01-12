@@ -22,7 +22,7 @@ import com.example.kasindi.ui.view.viewmodel.EditTransViewModel
 import kotlinx.coroutines.launch
 
 object DestinasiEditTrans : DestinasiNavigasi {
-    override val route: String = "item_detailtrans"
+    override val route: String = "item_editltrans"
     override val titleRes: String = "Edit Transaksi"
     const val transIdArg = "itemId"
     val routeWithArg = "$route/{$transIdArg}"

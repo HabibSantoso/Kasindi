@@ -8,6 +8,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.kasindi.AplikasiKasindi
 import com.example.kasindi.ui.view.viewmodel.AddTransViewModel
 import com.example.kasindi.ui.view.viewmodel.DetailTransViewModel
+import com.example.kasindi.ui.view.viewmodel.EditTransViewModel
 import com.example.kasindi.ui.view.viewmodel.HomeViewModel
 
 object PenyediaViewModel {
@@ -22,6 +23,10 @@ object PenyediaViewModel {
 
         initializer {
             DetailTransViewModel(createSavedStateHandle(),aplicationKasindi().container.repositoriKasindi)
+        }
+
+        initializer {
+            EditTransViewModel(createSavedStateHandle(),aplicationKasindi().container.repositoriKasindi)
         }
     }
 }

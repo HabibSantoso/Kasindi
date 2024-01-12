@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -35,6 +36,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.kasindi.R
 import com.example.kasindi.model.Transaksi
@@ -109,7 +111,7 @@ private fun ItemDetailsBody(
     ) {
         var deleteConfirmationRequired by rememberSaveable { mutableStateOf(false) }
         ItemDetails(
-            transaksi = transaksiDetailUiState.detailtransaksi.toTrans(), modifier = Modifier.fillMaxWidth())
+            transaksi = transaksiDetailUiState.detailtransaksi.toTrans(), modifier = Modifier.fillMaxWidth().height(250.dp).padding(top = 70.dp))
 
         OutlinedButton(
             onClick = { deleteConfirmationRequired = true },

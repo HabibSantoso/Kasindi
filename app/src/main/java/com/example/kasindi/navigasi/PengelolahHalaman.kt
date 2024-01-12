@@ -12,8 +12,10 @@ import androidx.navigation.navArgument
 import com.example.kasindi.ui.view.screen.AddTransScreen
 import com.example.kasindi.ui.view.screen.DestinasiAddTran
 import com.example.kasindi.ui.view.screen.DestinasiDetailTrans
+import com.example.kasindi.ui.view.screen.DestinasiEditTrans
 import com.example.kasindi.ui.view.screen.DestinasiHome
 import com.example.kasindi.ui.view.screen.DetailTransScreen
+import com.example.kasindi.ui.view.screen.EditTransScreen
 import com.example.kasindi.ui.view.screen.HomeScreen
 
 @Composable
@@ -31,7 +33,8 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
                 })
         }
         composable(DestinasiAddTran.route){
-            AddTransScreen(navigateBack = { navController.popBackStack() })
+            AddTransScreen(navigateBack = {
+                navController.popBackStack() })
         }
 
         composable(
@@ -42,8 +45,19 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
         ){
             DetailTransScreen(
                 navigateBack = {navController.popBackStack()},
-                navigateToEditItem = {}
+                navigateToEditItem = {navController.navigate("${DestinasiEditTrans.route}/$it")}
             )
         }
+        composable(
+            DestinasiEditTrans.routeWithArg,
+            arguments = listOf(navArgument(DestinasiEditTrans.transIdArg){
+                type = NavType.IntType
+            })
+        ){
+            EditTransScreen(
+                navigateBack = { navController.popBackStack() },
+                onNavigateUp = { navController.navigateUp() })
+        }
+
     }
 }

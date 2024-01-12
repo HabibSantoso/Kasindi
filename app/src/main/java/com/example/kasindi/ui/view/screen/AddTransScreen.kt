@@ -43,14 +43,16 @@ fun AddTransScreen(
     viewModel: AddTransViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
     val coroutineScope = rememberCoroutineScope()
-    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
+    //val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold (
-        modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+        modifier = modifier/*.nestedScroll(scrollBehavior.nestedScrollConnection)*/,
         topBar = {
             TopAppBarKasindi(
                 title = DestinasiAddTran.titleRes,
                 canNavigateBack = true,
-                scrollBehavior = scrollBehavior
+                navigateUp = navigateBack
+
+                //scrollBehavior = scrollBehavior
             )
         }) {innerPadding ->
         TransaksiInputBody(
