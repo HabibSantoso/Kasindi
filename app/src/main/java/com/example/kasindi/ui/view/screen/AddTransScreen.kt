@@ -37,7 +37,7 @@ object DestinasiAddTran: DestinasiNavigasi {
 }
 
 @Composable
-fun EntrySiswaScreen(
+fun AddTransScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: AddTransViewModel = viewModel(factory = PenyediaViewModel.Factory)
