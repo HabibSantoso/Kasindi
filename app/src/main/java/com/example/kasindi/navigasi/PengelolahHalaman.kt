@@ -7,6 +7,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.kasindi.ui.view.screen.DestinasiAddTran
 import com.example.kasindi.ui.view.screen.DestinasiHome
 import com.example.kasindi.ui.view.screen.HomeScreen
 
@@ -19,7 +20,7 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
     ){
         composable(DestinasiHome.route) {
             HomeScreen(
-                navigateToItemEntry = {  },
+                navigateToItemEntry = { navController.navigate(DestinasiAddTran.route) },
                 onDetailClick = {})
         }
     }
