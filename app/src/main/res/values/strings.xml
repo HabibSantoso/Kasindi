@@ -4,4 +4,5 @@
     <string name="retry">Retry</string>
     <string name="loading">Loading</string>
     <string name="deskripsi_no_item">Tidak ada Transasksi. Tap + untuk menambah data</string>
+    <string name="entry_Transaksi">Tambah Transaksi</string>
 </resources>
