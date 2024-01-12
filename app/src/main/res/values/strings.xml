@@ -9,4 +9,11 @@
     <string name="keterangan">Keterangan</string>
     <string name="tipe">Jenis Transaksi</string>
     <string name="nominal">Nominal</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+    <string name="delete">Hapus</string>
+    <string name="update">Edit</string>
+    <string name="attention">Perhatian</string>
+    <string name="tanya">Apakah anda yakin menghapus ini ?</string>
+    <string name="edit_Trans">Edit Transaksi</string>
 </resources>
